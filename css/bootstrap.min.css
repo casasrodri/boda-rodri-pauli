@@ -6629,6 +6629,11 @@ a.close.disabled {
     line-height: 1.5
 }
 
+.modal-subtitle {
+    margin-bottom: 0;
+    line-height: 0.9
+}
+
 .modal-body {
     position: relative;
     -ms-flex: 1 1 auto;

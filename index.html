@@ -1074,9 +1074,53 @@
                 </div>
 
                 <div class="modal-body">
-                    Si querés colaborar con nuestra luna de miel 🌙 te dejamos los datos de nuestra cuenta:
-                    <br>
-                    Alias: <b>paurodri</b>
+                    Si querés colaborar con nuestra luna de miel 🌙 te dejamos los datos de nuestras cuentas:
+
+                    <div style="margin-top: 6px;">
+                        <br>
+                        <h5 class="modal-subtitle">Titular</h5>
+                        <b>Nombre:</b> Adrián Rodrigo Casas
+                        <br>
+                        <b>CUIT:</b> 20363561684
+                        <br>
+                        <b>Banco:</b> Brubank
+                    </div>
+
+                    <div style="margin-top: 6px;" onclick="copiarAlPortapapeles('boda.paurodri')">
+                        <br>
+                        <h5 class="modal-subtitle">Cuenta en $</h5>
+                        <b>Alias:</b> boda.paurodri
+                        <br>
+                        <b>CBU:</b> 1430001713003407290018
+                        <br>
+                        <b>N° de Cuenta:</b> 1300340729001
+                    </div>
+
+                    <div style="margin-top: 6px;" onclick="copiarAlPortapapeles('boda.paurodri.dolar')">
+                        <br>
+                        <h5 class="modal-subtitle">Cuenta en U$D</h5>
+                        <b>Alias:</b> boda.paurodri.dolar
+                        <br>
+                        <b>CBU:</b> 1430001714003407290026
+                        <br>
+                        <b>N° de Cuenta:</b> 1400340729002
+                    </div>
+
+                    <script>
+                        function copiarAlPortapapeles(texto) {
+                            // const texto = "Este es el texto que se va a copiar";
+
+                            navigator.clipboard.writeText(texto)
+                                .then(() => {
+                                    alert("Texto copiado al portapapeles" + texto);
+                                })
+                                .catch(err => {
+                                    console.error("Error al copiar: ", err);
+                                });
+                        }
+                    </script>
+
+
 
                 </div>
 

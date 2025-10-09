@@ -1091,6 +1091,12 @@ footer p a:hover {
   color: var(--color-2);
 }
 
+.modal-dialog .modal-subtitle {
+  font-weight: 500;
+  color: var(--color-2);
+  margin: 6px;
+}
+
 .modal-dialog form label {
   color: var(--color-2);
 }
@@ -1579,6 +1585,10 @@ footer p a:hover {
 
 #modalRegalos .modal-header .modal-title {
   font-size: 25px;
+}
+
+#modalRegalos .modal-body .modal-subtitle {
+  font-size: 18px;
 }
 
 #modalRegalos .modal-footer {
