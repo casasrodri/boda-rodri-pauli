@@ -349,6 +349,17 @@ body {
     transition: transform 0.3s ease;
 }
 
+.detail-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.detail-card a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .detail-card:hover {
     transform: translateY(-5px);
 }
