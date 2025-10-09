@@ -635,7 +635,7 @@
 
 
                         <p>
-                            Información adicional <br> para tener en cuenta 👍</p>
+                            Información adicional <br> para tener en cuenta</p>
 
 
                         <a href="#" class="boton  modal-tips">
@@ -1112,7 +1112,7 @@
 
                             navigator.clipboard.writeText(texto)
                                 .then(() => {
-                                    console.log("Texto copiado al portapapeles" + texto);
+                                    console.log("Texto copiado al portapapeles: " + texto);
                                 })
                                 .catch(err => {
                                     console.error("Error al copiar: ", err);
@@ -1159,7 +1159,20 @@
 
                 <div class="modal-body">
 
-                    Alias: <b>paurodri</b>
+                    <div style="margin-top: 6px;" onclick="copiarAlPortapapeles('paurodri')">
+                        <b>Alias:</b> paurodri
+                        <br>
+                        <b>CBU:</b> 0070138530004087514752
+                        <br>
+                        <b>Banco:</b> Banco Galicia
+                        <br>
+                        <b>N° de Cuenta:</b> 4087514-7 138-5
+                        <br>
+                        <br>
+                        <b>CUIT:</b> 20363561684
+                        <br>
+                        <b>Titular:</b> Adrián Rodrigo Casas
+                    </div>
 
                 </div>
 
