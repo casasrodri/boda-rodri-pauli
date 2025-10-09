@@ -181,7 +181,7 @@
                 <div class="box-aros d-flex justify-content-center align-items-center">
                     <div class="box-circulo text-center">
 
-                        <span class="falta">Falta</span>
+                        <span class="falta">Faltan</span>
 
                         <div id="reloj" class="reloj">
 
@@ -227,10 +227,11 @@
 
 
 
+
     <section class="bloque-grupo-invitados">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-md-10" hidden>
 
                     <div class="card-grupo-invitados">
                         <div class="card-content">
@@ -264,6 +265,7 @@
     </section>
 
 
+
     <!-- Ceremonia - Fiesta-->
     <section class="ceremonia-fiesta">
 
@@ -291,8 +293,8 @@
 
                                 <span class="nameBtn">Agendar</span>
 
-                                <span class="start">2025-11-01 22:46:53</span>
-                                <!-- <span class="end">2025-11-01 22:46:53</span> -->
+                                <span class="start">2025-11-01 20:00:00</span>
+                                <span class="end">2025-11-02 04:00:00</span>
                                 <span class="timezone">America/Argentina/Buenos_Aires</span>
                                 <span class="title">Boda - Rodri & Pauli</span>
 
@@ -301,15 +303,17 @@
 
                         <div class="info-box">
                             <h6>Lugar</h6>
-                            <p>Parroquia Nuestra Señora de Lujan</p>
+                            <p>Espacio San Carlos</p>
                             <a href="#" data-evento="Ceremonia" class="boton confirmar-asistencia">Confirmar
                                 asistencia</a>
                         </div>
 
                         <div class="info-box">
                             <h6>Dirección</h6>
-                            <p>Av. Pergamino 203 - BsAs</p>
-                            <a href="#" data-evento="Ceremonia" class="boton modal-como-llegar">¿Cómo llegar?</a>
+                            <p>Av. Bernando H'oggigins 6207<br>Córdoba, Argentina</p>
+                            <!-- <a href="#" data-evento="Ceremonia" class="boton modal-como-llegar">¿Cómo llegar?</a> -->
+                            <a href="https://maps.app.goo.gl/Ubs6CLnY3SDQMRh9A" class="boton" target="_blank">¿Cómo
+                                llegar?</a>
                         </div>
 
                     </div>
@@ -317,7 +321,7 @@
                 </div>
 
 
-                <div class=" col-md-6 col-fiesta text-center">
+                <div class=" col-md-6 col-fiesta text-center" hidden>
 
                     <div class="anim-fiesta"></div>
 
@@ -607,13 +611,15 @@
 
                 <div class="w-100">
 
-                    <a target="_blank" href="https://www.instagram.com/" class="hashtag">#fedeylore</a>
+                    <a target="_blank" href="https://www.instagram.com/explore/search/keyword/?q=%23BodaPauliRodri"
+                        class="hashtag">#BodaPauliRodri</a>
 
                 </div>
 
                 <br>
 
-                <a target="_blank" href="https://www.instagram.com/" class="boton">Ver en Instagram</a>
+                <a target="_blank" href="https://www.instagram.com/explore/search/keyword/?q=%23BodaPauliRodri"
+                    class="boton">Ver en Instagram</a>
 
             </div>
         </div>
@@ -629,12 +635,11 @@
                 <div class="col-md-6 col-nombres-footer d-flex justify-content-end align-items-center">
 
                     <h4>
-                        Rodri <span>&</span>
-                        Pauli </h4>
+                        Rodri <span>&</span> Pauli </h4>
 
                 </div>
 
-
+                <!--
                 <div
                     class="col-md-6 col-acciones-footer d-flex justify-content-center justify-content-md-start align-items-center">
 
@@ -682,7 +687,7 @@
 
                     </ul>
 
-                </div>
+                </div> -->
 
 
 
@@ -697,19 +702,19 @@
                 <div class="col-md-12">
 
 
-                    <p>
+                    <!-- <p>
                         Desarrollado con <span class="heart">&#129505;</span> por <a href="https://www.fixdate.io/ar/"
                             target="_blank">Fixdate</a>
-                    </p>
+                    </p> -->
 
 
                     <!-- Modal cambio de idioma -->
 
-                    <p>
+                    <!-- <p>
                         <img class="current-flag" width="20" height="20"
                             src="https://www.fixdate.io/public/images/iconos-paises/es-AR.svg" alt="">
                         <a href="#" data-toggle="modal" data-target="#modal-lang">Cambiar país</a>
-                    </p>
+                    </p> -->
 
 
 
@@ -721,12 +726,12 @@
 
     <!-- Musica -->
 
-
+    <!--
     <div id="controlador-musica">
         <div id="play-pause-music" data-estado-music="pause" class="music-anim-icon"></div>
     </div>
 
-    <div id="player-musica-fondo"></div>
+    <div id="player-musica-fondo"></div> -->
 
 
 
@@ -911,7 +916,8 @@
 
                 <div class="modal-body">
 
-                    <p>Contenido Dress Code</p>
+                    <p>Elegante formal</p>
+                    <p>La idea es que vayas cómodo, pero listo para las fotos 📷</p>
 
                 </div>
 
@@ -986,7 +992,11 @@
                 </div>
 
                 <div class="modal-body">
-                    Contenido modal regalos </div>
+                    Si querés colaborar con nuestra luna de miel 🌙 te dejamos los datos de nuestra cuenta:
+                    <br>
+                    Alias: <b>paurodri</b>
+
+                </div>
 
                 <div class="modal-footer">
                 </div>
@@ -1193,9 +1203,9 @@
     <!-- Scripts -->
     <!-- Varaibles para JS desde config -->
     <script>
-        var _pathApp = "https://www.fixdate.io/";
+        // var _pathApp = "https://www.fixdate.io/";
 
-        var _pathProducto = "https://www.fixdate.io/modelo-invitacion/30/";
+        // var _pathProducto = "https://www.fixdate.io/modelo-invitacion/30/";
 
         var tokenProducto = "";
 
@@ -1215,11 +1225,11 @@
         // Cuenta regresiva
         var fechaCuentaRegresiva = "11/01/2025 20:00:00";
 
-        // Mapas
-        var latitudFiesta = -34.6201481;
-        var longitudFiesta = -58.4046887;
-        var latitudCeremonia = -34.6201481;
-        var longitudCeremonia = -58.4046887;
+        // Mapas,
+        var latitudFiesta = -31.486866826982958;
+        var longitudFiesta = -64.16865764569893;
+        var latitudCeremonia = -31.4868668;
+        var longitudCeremonia = -64.1686576;
 
 
     </script>
@@ -1261,7 +1271,7 @@
 
 
     <!-- Lottie -->
-    <script src="https://www.fixdate.io/modelo-invitacion/30/js/lottie_svg.min.js"></script>
+    <script src="js/lottie_svg.min.js"></script>
     <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
     <!-- <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script> -->
 
