@@ -77,9 +77,16 @@
         content="https://www.fixdate.io/modelo-invitacion/30/img/faviconit/favicon-144.png"> -->
     <meta name="msapplication-config"
         content="https://www.fixdate.io/modelo-invitacion/30/img/faviconit/browserconfig.xml">
+
+    <style>
+        #costo-tarjeta {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
+
 
 
 
@@ -155,7 +162,10 @@
 
                             Todos somos mortales, <br> hasta el primer beso y la segunda copa de vino <br>
 
+
                             <img src="img/comilla-cierre.svg" alt="">
+
+
                         </p>
                     </div>
 
@@ -315,6 +325,31 @@
                             <a href="https://maps.app.goo.gl/Ubs6CLnY3SDQMRh9A" class="boton" target="_blank">¿Cómo
                                 llegar?</a>
                         </div>
+
+
+                        <div id="costo-tarjeta" class="info-box">
+                            <h6>Costo</h6>
+                            <p id="valorTarjeta">$ 50.000</p>
+                            <a href="#" class="boton modal-costo-tarjeta">Datos para Transferir</a>
+                        </div>
+
+                        <script>
+                            // Obtener los parámetros de la URL
+                            const params = new URLSearchParams(window.location.search);
+
+                            // Verificar si el parámetro 'mostrarElemento' es igual a 'true'
+                            const costoTarjeta = params.get('ct');
+
+                            if (costoTarjeta === '1') {
+                                document.getElementById('costo-tarjeta').style.display = 'block';
+                                document.getElementById('valorTarjeta').innerText = '$ 50.000';
+                            }
+
+                            if (costoTarjeta === '2') {
+                                document.getElementById('costo-tarjeta').style.display = 'block';
+                                document.getElementById('valorTarjeta').innerText = '$ 100.000';
+                            }
+                        </script>
 
                     </div>
 
@@ -1005,6 +1040,48 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal costo tarjeta-->
+    <div id="modalCosto" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="white-circle-icon">
+                        <img class="" src="img/img_circuloRegalo.svg" alt="">
+                    </div>
+
+                </div>
+
+
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">Datos Bancarios</h5>
+
+                </div>
+
+                <div class="modal-body">
+
+                    Alias: <b>paurodri</b>
+
+                </div>
+
+                <div class="modal-footer">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Modal mapa-->
     <div id="modalMapa" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -2197,6 +2274,20 @@
             e.preventDefault();
 
             $('#modalRegalos').modal({
+                backdrop: 'static'
+            })
+
+        });
+    </script>
+
+    <!-- Modal costo tarjeta -->
+    <script>
+        // Abrir modal
+        $('body').on('click', 'a.modal-costo-tarjeta', function (e) {
+
+            e.preventDefault();
+
+            $('#modalCosto').modal({
                 backdrop: 'static'
             })
 
