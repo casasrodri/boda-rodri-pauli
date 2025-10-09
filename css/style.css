@@ -843,7 +843,7 @@ section.fiesta .item-fiesta .hojas-musica {
 
 
 section.regalos {
-  background: url('../img/img_texturaFondo.jpg') left top repeat var(--color-4);
+  /* background: url('../img/img_texturaFondo.jpg') left top repeat var(--color-4); */
   padding-top: 14%;
   position: relative;
   padding-bottom: 10%
@@ -939,7 +939,7 @@ section.instagram:after {
 
 section.footer {
   position: relative;
-  background: url('../img/img_texturaFondo.jpg') left top repeat var(--color-4);
+  /* background: url('../img/img_texturaFondo.jpg') left top repeat var(--color-4); */
   padding-bottom: 10%;
   padding-top: 10%;
   margin-top: -2px;
