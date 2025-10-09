@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pau & Rodri - Invitación de Boda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="leaf-decoration left">
+                <svg viewBox="0 0 200 300" class="leaf-svg">
+                    <path d="M50,50 Q30,100 50,150 Q70,200 50,250 Q30,280 50,300" fill="rgba(139, 195, 74, 0.1)"
+                        stroke="rgba(139, 195, 74, 0.3)" stroke-width="2" />
+                    <path d="M60,60 Q40,110 60,160 Q80,210 60,260 Q40,290 60,300" fill="rgba(139, 195, 74, 0.1)"
+                        stroke="rgba(139, 195, 74, 0.3)" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="leaf-decoration right">
+                <svg viewBox="0 0 200 300" class="leaf-svg">
+                    <path d="M150,50 Q170,100 150,150 Q130,200 150,250 Q170,280 150,300" fill="rgba(139, 195, 74, 0.1)"
+                        stroke="rgba(139, 195, 74, 0.3)" stroke-width="2" />
+                    <path d="M140,60 Q160,110 140,160 Q120,210 140,260 Q160,290 140,300" fill="rgba(139, 195, 74, 0.1)"
+                        stroke="rgba(139, 195, 74, 0.3)" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="rings-decoration">
+                <div class="wedding-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                </div>
+            </div>
+            <h1 class="couple-names">Rodri & Pauli</h1>
+            <p class="wedding-date">1 de noviembre de 2025</p>
+            <p class="invitation-text">Queremos compartir con ustedes el día más especial de nuestras vidas</p>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Carousel -->
+    <section class="photo-carousel">
+        <div class="container">
+            <h2>Nuestra Historia</h2>
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="slide active">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&h=600&fit=crop"
+                            alt="Pareja 1">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=600&fit=crop"
+                            alt="Pareja 2">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&h=600&fit=crop"
+                            alt="Pareja 3">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&h=600&fit=crop"
+                            alt="Pareja 4">
+                    </div>
+                </div>
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details -->
+    <section class="wedding-details">
+        <div class="container">
+            <h2>Detalles de la Celebración</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Fecha</h3>
+                    <p>15 de Junio, 2024</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hora</h3>
+                    <p>18:00 hs</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p>Salón Los Laureles<br>Av. Principal 1234<br>Buenos Aires</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Código de Vestimenta</h3>
+                    <p>Elegante Sport<br>Colores: Verde, Blanco, Oliva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Form -->
+    <section class="rsvp-section">
+        <div class="container">
+            <h2>Confirmar Asistencia</h2>
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Número de Invitados</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Seleccionar</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="attendance">¿Asistirás a la celebración?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="yes" required>
+                            <span class="radio-custom"></span>
+                            ¡Por supuesto que sí!
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="no" required>
+                            <span class="radio-custom"></span>
+                            Lamentablemente no podré
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje para los novios (opcional)</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Confirmar Asistencia</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Song Suggestion -->
+    <section class="song-suggestion">
+        <div class="container">
+            <h2>Sugerir una Canción</h2>
+            <p>¿Hay alguna canción especial que te gustaría escuchar en nuestra boda?</p>
+            <form class="song-form" id="songForm">
+                <div class="form-group">
+                    <label for="songTitle">Título de la Canción</label>
+                    <input type="text" id="songTitle" name="songTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="artist">Artista</label>
+                    <input type="text" id="artist" name="artist" required>
+                </div>
+                <div class="form-group">
+                    <label for="songMessage">¿Por qué es especial esta canción? (opcional)</label>
+                    <textarea id="songMessage" name="songMessage" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Sugerir Canción</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gift Registry -->
+    <section class="gift-registry">
+        <div class="container">
+            <h2>Lista de Regalos</h2>
+            <p>Su presencia es el mejor regalo, pero si desean obsequiarnos algo, aquí tienen algunas ideas:</p>
+            <div class="gift-categories">
+                <div class="gift-category">
+                    <h3>Hogar</h3>
+                    <ul>
+                        <li>Juego de vajilla</li>
+                        <li>Mantelería</li>
+                        <li>Electrodomésticos</li>
+                        <li>Decoración</li>
+                    </ul>
+                </div>
+                <div class="gift-category">
+                    <h3>Experiencias</h3>
+                    <ul>
+                        <li>Voucher para cena romántica</li>
+                        <li>Fin de semana en spa</li>
+                        <li>Clases de cocina</li>
+                        <li>Viaje de luna de miel</li>
+                    </ul>
+                </div>
+                <div class="gift-category">
+                    <h3>Contribución</h3>
+                    <p>También pueden contribuir a nuestro fondo de luna de miel:</p>
+                    <div class="bank-info">
+                        <p><strong>Banco:</strong> Banco Nacional</p>
+                        <p><strong>CBU:</strong> 1234567890123456789012</p>
+                        <p><strong>A nombre de:</strong> Paula y Rodrigo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="rings-footer">
+                    <div class="wedding-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                    </div>
+                </div>
+                <p>¡Esperamos celebrar este día especial con ustedes!</p>
+                <p class="footer-names">Pau & Rodri</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

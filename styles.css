@@ -1,0 +1,680 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #0d9642;
+    --dark-green: #689f38;
+    --olive: #827717;
+    --light-green: #c8e6c9;
+    --white: #ffffff;
+    --cream: #d3dad485;
+    --text-dark: #2c3e50;
+    --text-light: #666;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat; */
+    background: url('wedding-1.jpg') center/cover no-repeat;
+    filter: blur(1px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 195, 74, 0.184) 0%, rgba(104, 159, 56, 0.299) 100%);
+    z-index: 1;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.leaf-decoration {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    z-index: 2;
+}
+
+.leaf-decoration.left {
+    left: -50px;
+}
+
+.leaf-decoration.right {
+    right: -50px;
+}
+
+.leaf-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 3;
+    position: relative;
+    color: var(--white);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.rings-decoration {
+    margin-bottom: 20px;
+}
+
+.wedding-rings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.ring {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ring-1 {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: 3px solid #FFD700;
+    transform: rotate(-15deg);
+}
+
+.ring-2 {
+    background: linear-gradient(45deg, #C0C0C0, #A8A8A8);
+    border: 3px solid #C0C0C0;
+    transform: rotate(15deg);
+}
+
+.ring::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.ring::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.couple-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.wedding-date {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.invitation-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Photo Carousel */
+.photo-carousel {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.photo-carousel h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 50px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slides {
+    position: relative;
+    height: 400px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: var(--light-green);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-green);
+}
+
+/* Wedding Details */
+.wedding-details {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.wedding-details h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 50px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.detail-card {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--cream);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-icon {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.detail-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+.detail-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* RSVP Section */
+.rsvp-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--light-green) 0%, var(--primary-green) 100%);
+}
+
+.rsvp-section h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--light-green);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--light-green);
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked+.radio-custom {
+    border-color: var(--primary-green);
+    background: var(--primary-green);
+}
+
+.radio-label input[type="radio"]:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--dark-green);
+}
+
+/* Song Suggestion */
+.song-suggestion {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.song-suggestion h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+}
+
+.song-suggestion>p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.song-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gift Registry */
+.gift-registry {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.gift-registry h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+}
+
+.gift-registry>p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gift-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.gift-category {
+    background: var(--cream);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gift-category h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gift-category ul {
+    list-style: none;
+}
+
+.gift-category li {
+    padding: 8px 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--light-green);
+}
+
+.gift-category li:last-child {
+    border-bottom: none;
+}
+
+.bank-info {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.bank-info p {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.bank-info strong {
+    color: var(--dark-green);
+}
+
+/* Footer */
+.footer {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--olive) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-content {
+    position: relative;
+}
+
+.rings-footer {
+    margin-bottom: 20px;
+}
+
+.rings-footer .wedding-rings {
+    animation: float 3s ease-in-out infinite;
+}
+
+.rings-footer .ring {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-content p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.footer-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 2.5rem;
+    }
+
+    .wedding-date {
+        font-size: 1.2rem;
+    }
+
+    .invitation-text {
+        font-size: 1rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+
+    .gift-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .leaf-decoration {
+        display: none;
+    }
+
+    .rsvp-form,
+    .song-form {
+        margin: 0 20px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names {
+        font-size: 2rem;
+    }
+
+    .carousel-container {
+        margin: 0 20px;
+    }
+
+    .carousel-slides {
+        height: 300px;
+    }
+}
