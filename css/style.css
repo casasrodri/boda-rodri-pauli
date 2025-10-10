@@ -142,6 +142,25 @@ a {
   flex: inherit;
 }
 
+/* Mostrar bullets y alinear a la izquierda para listas dentro de modales */
+.modal-body ul {
+  list-style: disc;
+  /* usar bullets */
+  list-style-position: outside;
+  padding-left: 1.25rem;
+  /* espacio a la izquierda para las viñetas */
+  margin: 0 0 1rem 0;
+  text-align: left;
+  /* asegurar alineación de texto */
+}
+
+.modal-body ul li {
+  display: list-item;
+  /* forzar comportamiento de elemento de lista */
+  margin-left: 0;
+  /* evitar márgenes extra */
+}
+
 
 .modal-transparent .modal-content {
   background: transparent;
