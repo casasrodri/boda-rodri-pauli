@@ -138,32 +138,45 @@
     </div>
 
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const ct = urlParams.get('ct') || 0
 
-        const visitante = {
-            tipo: "Visitas",
-            costoTarjeta: ct,
-            userAgent: navigator.userAgent,
-            language: navigator.language,
-            platform: navigator.platform,
-            vendor: navigator.vendor,
-            appVersion: navigator.appVersion,
-            appName: navigator.appName,
-            product: navigator.product,
+        function getCostoTarjeta() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('ct') || 0
         }
 
-        console.log({ visitante })
+        async function getIpPublica() {
+            const response = await fetch("https://api.ipify.org?format=json");
+            const data = await response.json();
+            return data.ip || 'No disponible';
+        }
 
-        fetch("https://script.google.com/macros/s/AKfycbyIeNba_7vA7eDuhCMdT2pGoEv4fD5XmD4amPyWkIA4PgpZ8ZpTQwa3QKUnaWas2BRj/exec", {
-            method: "POST",
-            body: JSON.stringify(visitante),
-        })
-            // Promesas fetch
-            .then(res => res.json())
-            .then(data => {
-                console.log("Registro de visita: ", data);
+        async function registrarVisita() {
+            const visitante = {
+                tipo: "Visitas",
+                costoTarjeta: await getCostoTarjeta(),
+                ip: await getIpPublica(),
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                platform: navigator.platform,
+                vendor: navigator.vendor,
+                appVersion: navigator.appVersion,
+                appName: navigator.appName,
+                product: navigator.product,
+            }
+
+            console.log({ visitante })
+
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyIeNba_7vA7eDuhCMdT2pGoEv4fD5XmD4amPyWkIA4PgpZ8ZpTQwa3QKUnaWas2BRj/exec", {
+                method: "POST",
+                body: JSON.stringify(visitante),
             });
+            const data = await response.json();
+            console.log("Registro de visita: ", data);
+        }
+
+        registrarVisita()
+
+
     </script>
     <!-- END PRELOADER AREA -->
 
