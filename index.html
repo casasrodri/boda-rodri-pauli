@@ -136,6 +136,35 @@
         </div>
 
     </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const ct = urlParams.get('ct') || 0
+
+        const visitante = {
+            tipo: "Visitas",
+            costoTarjeta: ct,
+            userAgent: navigator.userAgent,
+            language: navigator.language,
+            platform: navigator.platform,
+            vendor: navigator.vendor,
+            appVersion: navigator.appVersion,
+            appName: navigator.appName,
+            product: navigator.product,
+        }
+
+        console.log({ visitante })
+
+        fetch("https://script.google.com/macros/s/AKfycbyIeNba_7vA7eDuhCMdT2pGoEv4fD5XmD4amPyWkIA4PgpZ8ZpTQwa3QKUnaWas2BRj/exec", {
+            method: "POST",
+            body: JSON.stringify(visitante),
+        })
+            // Promesas fetch
+            .then(res => res.json())
+            .then(data => {
+                console.log("Registro de visita: ", data);
+            });
+    </script>
     <!-- END PRELOADER AREA -->
 
     <!-- Modal musica fondo -->
@@ -2201,7 +2230,7 @@
                 const comentarios = document.getElementById('comentariosAsistente').value;
 
                 const datos = {
-                    tipo: 'asistencia',
+                    tipo: 'Asistencia',
                     presente: Number(asiste),
                     nombre,
                     datos: comentarios,
@@ -2432,7 +2461,7 @@
                 var sugerenciaLink = $.trim($("#linkSugerencia").val());
 
                 const datos = {
-                    tipo: 'musica',
+                    tipo: 'Musica',
                     nombre: sugerenciaName,
                     cancion: sugerenciaDescription,
                     link: sugerenciaLink,
